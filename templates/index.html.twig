@@ -19,7 +19,7 @@
         <ul>
         {% for issue in milestone.issues %}
             {% if issue.state == "closed" %}<s>{% endif %}
-            <li>{{ issue.title }} <a href="{{ issue.url }}">#{{ issue.number }}</a></li>
+            <li>{{ issue.title }} <a href="{{ issue.url | replace({'api.': '', '/repos': ''}) }}" target="_blank">#{{ issue.number }}</a></li>
             {% if issue.state == "closed" %}</s>{% endif %}
         {% endfor %}
         </ul>

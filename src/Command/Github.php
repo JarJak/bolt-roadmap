@@ -75,6 +75,8 @@ HELP
 
         $this->configuration->set($milestones);
         $this->configuration->write();
+
+	dump($milestones);
         
         $output->writeLn(sprintf("Got %d milestones!", count($milestones)));
     }
